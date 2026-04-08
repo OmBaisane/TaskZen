@@ -6,11 +6,20 @@ interface Props {
   toggleTask: (id: number) => void;
   deleteTask: (id: number) => void;
   startEdit: (task: Task) => void;
+  darkMode: boolean;
 }
 
-function TaskList({ tasks, toggleTask, deleteTask, startEdit }: Props) {
+function TaskList({
+  tasks,
+  toggleTask,
+  deleteTask,
+  startEdit,
+  darkMode,
+}: Props) {
   return (
-    <div className="max-w-md mx-auto mt-10 p-5 bg-gray-800 rounded">
+    <div
+      className={`max-w-md mx-auto mt-10 p-5 rounded ${darkMode ? "bg-gray-800" : "bg-gray-200"}`}
+    >
       <p className="mb-4 font-bold text-right text-emerald-400">
         Total Tasks : {tasks.length}
       </p>
@@ -22,6 +31,7 @@ function TaskList({ tasks, toggleTask, deleteTask, startEdit }: Props) {
             toggleTask={toggleTask}
             deleteTask={deleteTask}
             startEdit={startEdit}
+            darkMode={darkMode}
           />
         ))}
       </ul>

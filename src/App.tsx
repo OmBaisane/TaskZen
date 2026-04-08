@@ -78,7 +78,7 @@ function App() {
     >
       <button
         onClick={() => setDarkMode(!darkMode)}
-        className="mb-4 px-4 py-2 bg-gray-700 rounded"
+        className={`mb-4 px-4 py-2 rounded ${darkMode ? "bg-gray-700 text-white" : "bg-gray-500 text-black"}`}
       >
         {darkMode ? "Light Mode" : "Dark Mode"}
       </button>
@@ -90,6 +90,7 @@ function App() {
         setInput={setInput}
         addTask={addTask}
         editId={editId}
+        darkMode={darkMode}
       />
 
       <div className="flex gap-2 mb-4">
@@ -118,6 +119,7 @@ function App() {
         toggleTask={toggleTask}
         deleteTask={deleteTask}
         startEdit={startEdit}
+        darkMode={darkMode}
       />
     </div>
   );
