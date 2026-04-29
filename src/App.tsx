@@ -17,6 +17,7 @@ function App() {
   const [input, setInput] = useState<string>("");
   const [editId, setEditId] = useState<number | null>(null);
   const [filter, setFilter] = useState<"all" | "pending" | "done">("all");
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -66,11 +67,13 @@ function App() {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
-  const filteredTask = tasks.filter((task) => {
-    if (filter === "pending") return task.status === "pending";
-    if (filter === "done") return task.status === "done";
-    return true;
-  });
+  const filteredTask = tasks
+    .filter((task) => {
+      if (filter === "pending") return task.status === "pending";
+      if (filter === "done") return task.status === "done";
+      return true;
+    })
+    .filter((task) => task.text.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <div
@@ -96,6 +99,14 @@ function App() {
           darkMode={darkMode}
         />
 
+        <input
+          type="text"
+          placeholder="Search tasks..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className={`w-full p-3 mb-4 rounded-lg outline-none ${darkMode ? "bg-gray-700 text-white placeholder-gray-300" : "bg-gray-200 text-black placeholder-gray-500"}`}
+        />
+
         <div className="flex justify-center gap-2 mb-6">
           <button
             className={`px-4 py-2 rounded active:scale-95 ${darkMode ? "bg-blue-700" : "bg-blue-500 hover:bg-blue-600"}`}
@@ -115,6 +126,17 @@ function App() {
           >
             Done
           </button>
+        </div>
+
+        <div className="flex justify-end">
+          <button
+          onClick={() =>
+            setTasks(tasks.filter((task) => task.status !== "done"))
+          }
+          className={`px-5 py-2 rounded-lg active:scale-95 transition ${darkMode ? "bg-red-500 hover:bg-red-600 text-white" : "bg-red-400 hover:bg-red-500 text-black"}`}
+        >
+          Clear Completed
+        </button>
         </div>
 
         <TaskList

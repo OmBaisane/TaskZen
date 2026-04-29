@@ -18,7 +18,7 @@ function TaskList({
 }: Props) {
   return (
     <div
-      className={`max-w-md mx-auto mt-10 p-5 rounded ${darkMode ? "bg-gray-800" : "bg-gray-200"}`}
+      className={`max-w-md mx-auto p-5 mt-5 rounded ${darkMode ? "bg-gray-700" : "bg-gray-200"}`}
     >
       {tasks.length > 0 && (
         <p className="mb-4 text-sm text-right">

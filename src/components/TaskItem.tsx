@@ -17,7 +17,7 @@ function TaskItem({
 }: Props) {
   return (
     <li
-      className={`flex justify-between items-center gap-2 mb-3 p-3 rounded-lg hover:scale-[1.02] transition ${darkMode ? "bg-gray-700" : "bg-gray-100"}`}
+      className={`flex justify-between items-center gap-2 mb-3 p-3 rounded-lg hover:scale-[1.02] transition ${darkMode ? "bg-gray-600" : "bg-gray-100"}`}
     >
       <span
         onClick={() => toggleTask(task.id)}
