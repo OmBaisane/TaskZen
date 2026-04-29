@@ -20,9 +20,16 @@ function TaskList({
     <div
       className={`max-w-md mx-auto mt-10 p-5 rounded ${darkMode ? "bg-gray-800" : "bg-gray-200"}`}
     >
-      <p className="mb-4 font-bold text-right text-emerald-400">
-        Total Tasks : {tasks.length}
-      </p>
+      {tasks.length > 0 && (
+        <p className="mb-4 text-sm text-right">
+          Total: {tasks.length} | Pending:{" "}
+          {tasks.filter((t) => t.status === "pending").length} | Done:{" "}
+          {tasks.filter((t) => t.status === "done").length}
+        </p>
+      )}
+      {tasks.length === 0 && (
+        <p className="text-center text-gray-400 mt-4">No tasks yet.</p>
+      )}
       <ul>
         {tasks.map((task) => (
           <TaskItem

@@ -74,53 +74,57 @@ function App() {
 
   return (
     <div
-      className={`min-h-screen p-5 ${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"}`}
+      className={`min-h-screen flex items-center justify-center p-5 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"}`}
     >
-      <button
-        onClick={() => setDarkMode(!darkMode)}
-        className={`mb-4 px-4 py-2 rounded ${darkMode ? "bg-gray-700 text-white" : "bg-gray-500 text-black"}`}
+      <div
+        className={`w-full max-w-md p-6 rounded-2xl shadow-lg ${darkMode ? "bg-gray-800" : "bg-white"}`}
       >
-        {darkMode ? "Light Mode" : "Dark Mode"}
-      </button>
-
-      <h1 className="text-3xl font-bold mb-4">TaskZen</h1>
-
-      <TaskInput
-        input={input}
-        setInput={setInput}
-        addTask={addTask}
-        editId={editId}
-        darkMode={darkMode}
-      />
-
-      <div className="flex gap-2 mb-4">
         <button
-          className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 active:scale-95"
-          onClick={() => setFilter("all")}
+          onClick={() => setDarkMode(!darkMode)}
+          className={`mb-4 px-4 py-2 rounded ${darkMode ? "bg-gray-700 text-white" : "bg-gray-500 text-black"}`}
         >
-          All
+          {darkMode ? "Light Mode" : "Dark Mode"}
         </button>
-        <button
-          className="bg-yellow-500 px-4 py-2 rounded hover:bg-yellow-600 active:scale-95"
-          onClick={() => setFilter("pending")}
-        >
-          Pending
-        </button>
-        <button
-          className="bg-green-500 px-4 py-2 rounded hover:bg-green-600 active:scale-95"
-          onClick={() => setFilter("done")}
-        >
-          Done
-        </button>
+
+        <h1 className="text-3xl font-bold mb-6 text-center">TaskZen</h1>
+
+        <TaskInput
+          input={input}
+          setInput={setInput}
+          addTask={addTask}
+          editId={editId}
+          darkMode={darkMode}
+        />
+
+        <div className="flex justify-center gap-2 mb-6">
+          <button
+            className={`px-4 py-2 rounded active:scale-95 ${darkMode ? "bg-blue-700" : "bg-blue-500 hover:bg-blue-600"}`}
+            onClick={() => setFilter("all")}
+          >
+            All
+          </button>
+          <button
+            className={`px-4 py-2 rounded active:scale-95 ${darkMode ? "bg-yellow-700" : "bg-yellow-500 hover:bg-yellow-600"}`}
+            onClick={() => setFilter("pending")}
+          >
+            Pending
+          </button>
+          <button
+            className={`px-4 py-2 rounded active:scale-95 ${darkMode ? "bg-green-700" : "bg-green-500 hover:bg-green-600"}`}
+            onClick={() => setFilter("done")}
+          >
+            Done
+          </button>
+        </div>
+
+        <TaskList
+          tasks={filteredTask}
+          toggleTask={toggleTask}
+          deleteTask={deleteTask}
+          startEdit={startEdit}
+          darkMode={darkMode}
+        />
       </div>
-
-      <TaskList
-        tasks={filteredTask}
-        toggleTask={toggleTask}
-        deleteTask={deleteTask}
-        startEdit={startEdit}
-        darkMode={darkMode}
-      />
     </div>
   );
 }
