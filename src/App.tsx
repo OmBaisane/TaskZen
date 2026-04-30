@@ -82,14 +82,16 @@ function App() {
       <div
         className={`w-full max-w-md p-6 rounded-2xl shadow-lg ${darkMode ? "bg-gray-800" : "bg-white"}`}
       >
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className={`mb-4 px-4 py-2 rounded ${darkMode ? "bg-gray-700 text-white" : "bg-gray-500 text-black"}`}
-        >
-          {darkMode ? "Light Mode" : "Dark Mode"}
-        </button>
+        <div className="flex justify-end mb-4">
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className={`px-4 py-2 rounded ${darkMode ? "bg-gray-700 text-white" : "bg-gray-500 text-black"}`}
+          >
+            {darkMode ? "☀️ Light" : "🌙 Dark"}
+          </button>
+        </div>
 
-        <h1 className="text-3xl font-bold mb-6 text-center">TaskZen</h1>
+        <h1 className="text-3xl font-bold mb-6 text-center">TaskZen 🚀</h1>
 
         <TaskInput
           input={input}
@@ -107,7 +109,7 @@ function App() {
           className={`w-full p-3 mb-4 rounded-lg outline-none ${darkMode ? "bg-gray-700 text-white placeholder-gray-300" : "bg-gray-200 text-black placeholder-gray-500"}`}
         />
 
-        <div className="flex justify-center gap-2 mb-6">
+        <div className="flex flex-wrap justify-center gap-2 mb-6">
           <button
             className={`px-4 py-2 rounded active:scale-95 ${darkMode ? "bg-blue-700" : "bg-blue-500 hover:bg-blue-600"}`}
             onClick={() => setFilter("all")}
@@ -128,15 +130,15 @@ function App() {
           </button>
         </div>
 
-        <div className="flex justify-end">
+        <div className="flex justify-center sm:justify-end mt-2">
           <button
-          onClick={() =>
-            setTasks(tasks.filter((task) => task.status !== "done"))
-          }
-          className={`px-5 py-2 rounded-lg active:scale-95 transition ${darkMode ? "bg-red-500 hover:bg-red-600 text-white" : "bg-red-400 hover:bg-red-500 text-black"}`}
-        >
-          Clear Completed
-        </button>
+            onClick={() =>
+              setTasks(tasks.filter((task) => task.status !== "done"))
+            }
+            className={`px-5 py-2 rounded-lg active:scale-95 transition ${darkMode ? "bg-red-500 hover:bg-red-600 text-white" : "bg-red-400 hover:bg-red-500 text-black"}`}
+          >
+            Clear Completed
+          </button>
         </div>
 
         <TaskList

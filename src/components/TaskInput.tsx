@@ -8,7 +8,7 @@ interface Props {
 
 function TaskInput({ input, setInput, addTask, editId, darkMode }: Props) {
   return (
-    <div className="flex gap-3 mb-5">
+    <div className="flex flex-col sm:flex-row gap-3 mb-5">
       <input
         type="text"
         value={input}
@@ -18,7 +18,7 @@ function TaskInput({ input, setInput, addTask, editId, darkMode }: Props) {
       />
 
       <button
-        className={`px-5 py-2 rounded-lg active:scale-95 transition ${darkMode ? "bg-blue-500 hover:bg-blue-600 text-white" : "bg-blue-400 hover:bg-blue-500 text-black"}`}
+        className={`w-full sm:w-auto px-5 py-2 rounded-lg active:scale-95 transition ${darkMode ? "bg-blue-500 hover:bg-blue-600 text-white" : "bg-blue-400 hover:bg-blue-500 text-black"}`}
         onClick={addTask}
       >
         {editId ? "Update" : "Add"}
