@@ -75,7 +75,7 @@ src/
 
 Om Baisane  
 - GitHub: https://github.com/OmBaisane/TaskZen  
-- LinkedIn: https://www.linkedin.com/in/om-baisane
+- LinkedIn: https://www.linkedin.com/in/om-baisane-b96625346
 
 ---
 
