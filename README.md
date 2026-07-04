@@ -1,84 +1,109 @@
-🚀 TaskZen – Task Manager App
+# ✅ TaskZen
 
-A task management web application built using React + TypeScript, focused on clean UI and efficient task handling.
-
----
-
-🌐 Live Demo
-
-👉 https://task-zen-omega.vercel.app/
+A modern task management application built with React, TypeScript, and Tailwind CSS featuring CRUD operations, filtering, local storage persistence, and a responsive user interface.
 
 ---
 
-📌 Features
+## 🌐 Live Demo
 
-- Add, Edit, Delete tasks (CRUD)
-- Mark tasks as Completed / Pending
-- Filter tasks (All / Pending / Done)
-- Dark / Light mode toggle
-- Data persistence using localStorage
-- Fast and responsive UI
+🔗 https://task-zen-omega.vercel.app/
+
+---
+
+## ✨ Features
+
+- Create, edit, and delete tasks
+- Mark tasks as completed or pending
+- Filter tasks (All, Pending, Completed)
+- Dark & Light mode
+- Local storage persistence
+- Responsive design
 - Component-based architecture
+- Clean and intuitive UI
 
 ---
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 - React
 - TypeScript
 - Tailwind CSS
-- Vercel (Deployment)
+- Local Storage
+- Vercel
 
 ---
 
-📂 Project Structure
+## 📂 Folder Structure
 
+```text
 src/
- ├── components/
- │    ├── TaskInput.tsx
- │    ├── TaskList.tsx
- │    └── TaskItem.tsx
- ├── types/
- │    └── task.ts
- ├── App.tsx
- └── index.tsx
+├── components/
+├── types/
+├── App.tsx
+├── index.tsx
+└── ...
+```
 
 ---
 
-⚙️ Installation & Setup
+## ⚙️ Installation
 
-1. Clone the repository
-   git clone https://github.com/OmBaisane/TaskZen
+Clone the repository
 
-2. Navigate to project folder
-   cd task-zen
+```bash
+git clone https://github.com/OmBaisane/TaskZen.git
+```
 
-3. Install dependencies
-   npm install
+Navigate to the project
 
-4. Start development server
-   npm start
+```bash
+cd TaskZen
+```
 
----
+Install dependencies
 
-🧠 Key Learnings
+```bash
+npm install
+```
 
-- Applied TypeScript in a real-world React project
-- Improved state management with proper typing
-- Built reusable and modular components
-- Implemented localStorage for persistence
-- Structured project for scalability and clarity
+Run the development server
 
----
-
-🙌 Author
-
-Om Baisane  
-- GitHub: https://github.com/OmBaisane/TaskZen  
-- LinkedIn: https://www.linkedin.com/in/om-baisane-b96625346
+```bash
+npm start
+```
 
 ---
 
-⭐ Note
+## 📚 Key Learnings
 
-This project demonstrates strong fundamentals in React + TypeScript and practical frontend development.
+- Built a complete CRUD application using React and TypeScript
+- Improved state management with proper TypeScript typing
+- Implemented local storage persistence
+- Created reusable and modular React components
+- Practiced clean project structure and scalable code organization
+
+---
+
+## 🔮 Future Improvements
+
+- Drag & Drop task sorting
+- Due dates
+- Categories & tags
+- Search functionality
+- Cloud synchronization
+- User authentication
+
+---
+
+## 📫 Contact
+
+- 🌐 Portfolio: https://portfolio-nine-phi-ry8fa70ws1.vercel.app
+- 💻 GitHub: https://github.com/OmBaisane
+- 💼 LinkedIn: https://www.linkedin.com/in/om-baisane-b96625346
+- 📧 Email: ombaisane29@gmail.com
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
